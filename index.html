@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrumpyKrab</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<div class="logo-container" onclick="scrollToTop()">
+<img src="logo.png" class="logo-img" alt="GrumpyKrab Logo">
+<div class="logo-text">GrumpyKrab</div>
+</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero fade">
+<img src="logo.png" class="hero-logo" alt="GrumpyKrab Logo">
+<h1>GrumpyKrab</h1>
+<p>I make games. I snap code together with my claws and turn random ideas into stuff you can actually play.</p>
+<button class="btn" onclick="scrollToSection('projects')">View Projects</button>
+</section>
+
+<section id="about" class="about fade">
+<h2>About</h2>
+<p>GrumpyKrab is just one crab with a keyboard. I like building game mechanics, testing dumb ideas that somehow work, and polishing things until they feel right. If it moves, jumps, explodes, or makes cool sounds, I probably had fun coding it.</p>
+</section>
+
+<section id="projects" class="projects fade">
+<h2>Projects</h2>
+<div class="project-grid">
+<div class="card">
+<h3>Cooking in the Tide Pool</h3>
+<p>New game bubbling under the sand right now. Still snapping pieces together and making sure it does not fall apart.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact fade">
+<h2>Contact</h2>
+<p>grumpykrabb[at]gmail[dot]com</p>
+</section>
+
+<footer>
+© 2026 GrumpyKrab. All Rights Reserved.
+</footer>
+
+<script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'})
+}
+function scrollToTop(){
+window.scrollTo({top:0,behavior:'smooth'})
+}
+const faders=document.querySelectorAll('.fade')
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show')
+}
+})
+},{threshold:.2})
+faders.forEach(fade=>observer.observe(fade))
+</script>
+
+</body>
+</html>

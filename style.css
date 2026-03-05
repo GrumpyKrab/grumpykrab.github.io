@@ -1,0 +1,149 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:#cc0000;
+overflow-x:hidden
+}
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 5%;
+background:#ffffff;
+border-bottom:2px solid #cc0000;
+z-index:1000
+}
+.logo-container{
+display:flex;
+align-items:center;
+gap:16px;
+cursor:pointer;
+margin-left:-20px;
+}
+.logo-img{
+height:70px;
+width:auto;
+transform:rotate(-12deg);
+transition:.3s ease;
+}
+.logo-container:hover .logo-img{
+transform:rotate(-6deg) scale(1.08);
+}
+.logo-text{
+font-weight:800;
+font-size:1.7rem;
+color:#cc0000;
+}
+nav ul{
+display:flex;
+gap:30px;
+list-style:none
+}
+nav a{
+text-decoration:none;
+color:#cc0000;
+font-weight:700;
+transition:.3s
+}
+nav a:hover{
+opacity:.6;
+}
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+background:#ffffff;
+}
+.hero-logo{
+width:200px;
+margin-bottom:20px;
+animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+.hero h1{
+font-size:3.5rem;
+font-weight:800;
+color:#cc0000;
+}
+.hero p{
+margin-top:20px;
+font-size:1.1rem;
+max-width:600px;
+font-weight:600;
+}
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border-radius:30px;
+border:2px solid #cc0000;
+background:#cc0000;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s
+}
+.btn:hover{
+background:white;
+color:#cc0000;
+}
+.about h2,.projects h2,.contact h2{
+font-size:2.3rem;
+margin-bottom:20px;
+color:#cc0000;
+}
+.about p{
+max-width:700px;
+line-height:1.6;
+font-weight:500;
+}
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+width:100%
+}
+.card{
+background:white;
+padding:30px;
+border-radius:16px;
+border:2px solid #cc0000;
+transition:.3s;
+}
+.card:hover{
+background:#cc0000;
+color:white;
+}
+.card h3{
+margin-bottom:10px;
+}
+footer{
+text-align:center;
+padding:30px;
+font-size:.9rem;
+border-top:2px solid #cc0000;
+margin-top:40px;
+background:#ffffff;
+}
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s
+}
+.fade.show{
+opacity:1;
+transform:translateY(0)
+}
